@@ -17,7 +17,7 @@ export default function LocationsTable({
   locations: Location[];
 }) {
   return (
-    <TableContainer sx={{border: '1px solid #777777', borderRadius: 2}}>
+    <TableContainer sx={{ border: '1px solid #777777', borderRadius: 2 }}>
       <Table sx={{ tableLayout: 'auto' }}>
         <TableHead>
           <TableRow>
@@ -48,9 +48,7 @@ export default function LocationsTable({
             </TableRow>
           ))}
         </TableBody>
-        <TableFooter>
-
-        </TableFooter>
+        <TableFooter></TableFooter>
       </Table>
     </TableContainer>
   );
