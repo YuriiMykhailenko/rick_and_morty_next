@@ -15,7 +15,27 @@
 }
 
 body {
+  overflow-y: scroll;
   color: var(--foreground);
+  overscroll-behavior: none;
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Roboto, Helvetica, sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(2, 64, 2, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  width: 10px;
+  background: rgba(2, 64, 2, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(2, 64, 2);
 }
