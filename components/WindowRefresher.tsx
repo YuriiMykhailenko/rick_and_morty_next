@@ -5,7 +5,9 @@ import PullToRefresh from 'react-pull-to-refresh';
 
 const handleRefresh = (): Promise<void> => {
   return new Promise((_) => {
-    window.location.reload();
+    if (typeof window !== 'undefined') {
+      window.location.reload();
+    }
     _();
   });
 };

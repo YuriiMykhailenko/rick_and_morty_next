@@ -4,6 +4,7 @@ import { Typography, Container } from '@mui/material';
 import List from '../../components/List';
 import LoadingList from '../../components/LoadingList';
 import { getCharacters } from '@/client/client';
+import WindowRefresher from '@/components/WindowRefresher';
 
 async function GetList({ page }: { page: number }) {
   const response = await getCharacters(String(page));
@@ -26,13 +27,15 @@ export default async function CaractersPage({
 
   return (
     <main>
-      <Container className="flex flex-col items-center justify-center gap-60 py-40">
-        <Typography variant="h3">Characters Page</Typography>
+      <WindowRefresher>
+        <Container className="flex flex-col items-center justify-center gap-60 py-40">
+          <Typography variant="h3">Characters Page</Typography>
 
-        <Suspense fallback={<LoadingList />}>
-          <GetList page={Number(page)} />
-        </Suspense>
-      </Container>
+          <Suspense fallback={<LoadingList />}>
+            <GetList page={Number(page)} />
+          </Suspense>
+        </Container>
+      </WindowRefresher>
     </main>
   );
 }
