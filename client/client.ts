@@ -6,20 +6,14 @@ const CHARACTERS = 'character';
 const LOCATIONS = 'location';
 // const EPISODES = 'episode';
 
-function wait(delay: number) {
-  return new Promise((resolve) => setTimeout(resolve, delay));
-}
-
 function fetchData<T>(searchParams: string = '', url: string): Promise<T> {
-  return wait(0)
-    .then(() => fetch(`${BASE_URL}${url}?page=${searchParams}`))
-    .then((res) => {
-      if (!res.ok) {
-        throw new Error();
-      }
+  return fetch(`${BASE_URL}${url}?page=${searchParams}`).then((res) => {
+    if (!res.ok) {
+      throw new Error();
+    }
 
-      return res.json();
-    });
+    return res.json();
+  });
 }
 
 export async function getCharacters(

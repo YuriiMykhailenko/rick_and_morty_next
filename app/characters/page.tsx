@@ -1,8 +1,9 @@
-import { Typography, Container } from '@mui/material';
 import { Suspense } from 'react';
+import { Typography, Container } from '@mui/material';
+
 import List from '../../components/List';
-import { getCharacters } from '@/client/client';
 import LoadingList from '../../components/LoadingList';
+import { getCharacters } from '@/client/client';
 
 async function GetList({ page }: { page: number }) {
   const response = await getCharacters(String(page));

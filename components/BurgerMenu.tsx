@@ -8,7 +8,7 @@ import { MouseEvent, useState } from 'react';
 export default function BurgerMenu() {
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
-  const handleClick = (event: MouseEvent<HTMLButtonElement | undefined>) => {
+  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -25,6 +25,7 @@ export default function BurgerMenu() {
       >
         <MenuIcon />
       </IconButton>
+
       <Menu
         anchorEl={anchorEl}
         keepMounted

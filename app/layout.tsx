@@ -8,6 +8,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 import MUIThemeProvider from '@/theme/ThemeProvider';
 import Header from '../components/Header';
+import WindowRefresher from '@/components/WindowRefresher';
+
 // import createCache from '@emotion/cache';
 // import { CacheProvider } from '@emotion/react';
 // import { createTheme, ThemeProvider } from '@mui/material';
@@ -32,10 +34,12 @@ export default function RootLayout({
       <html lang="en">
         {/* <head>
           <link rel="stylesheet" href="globals.css" as='style' />
-        </head> */}
+          </head> */}
         <body>
-          <Header />
-          {children}
+          <WindowRefresher>
+            <Header />
+            {children}
+          </WindowRefresher>
         </body>
       </html>
     </MUIThemeProvider>
