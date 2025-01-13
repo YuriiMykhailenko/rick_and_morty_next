@@ -1,9 +1,11 @@
-// 'use client';
+'use client';
 
-import { Character } from '@/types/character';
-import { Box, Card, Grid2 } from '@mui/material';
 import Image from 'next/image';
+
 import TextAtribute from './TextAtribute';
+import { Character } from '@/types/character';
+
+import { Box, Card, Grid2 } from '@mui/material';
 import Skeleton from '@mui/material/Skeleton';
 
 const IMG_SIZE = 220;
@@ -13,7 +15,7 @@ interface Props {
   isLoading?: boolean;
 }
 
-export default async function PersonCard({ person, isLoading = false }: Props) {
+export default function PersonCard({ person, isLoading = false }: Props) {
   return (
     <Grid2>
       <Card>
@@ -23,7 +25,6 @@ export default async function PersonCard({ person, isLoading = false }: Props) {
           <Image
             src={person!.image}
             alt={person!.name}
-            // placeholder='blur'
             width={IMG_SIZE}
             height={IMG_SIZE}
             priority
