@@ -2,7 +2,7 @@ import { Container, Typography } from '@mui/material';
 import LocationsTable from '../../components/LocationsTable';
 import { Suspense } from 'react';
 import { getLocations } from '@/client/client';
-import WindowRefresher from '@/components/WindowRefresher';
+// import WindowRefresher from '@/components/WindowRefresher';
 
 async function GetLocationsTable() {
   const locations = (await getLocations()).results;
