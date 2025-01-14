@@ -17,7 +17,7 @@
 body {
   overflow-y: scroll;
   color: var(--foreground);
-  overscroll-behavior: none;
+  /* overscroll-behavior: none; */
   background: var(--background);
   font-family: Roboto, Helvetica, sans-serif;
 }
