@@ -27,6 +27,17 @@ export async function getCharacters(
   return respond;
 }
 
+export async function getAllCharacters(
+  searchParams: string = '',
+): Promise<CharactersResponse> {
+  const respond = await fetchData<CharactersResponse>(
+    searchParams,
+    CHARACTERS,
+  ).then((res) => res);
+
+  return respond;
+}
+
 export async function getLocations(
   searchParams: string = '',
 ): Promise<LocationsResponse> {
